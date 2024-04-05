@@ -12,7 +12,6 @@ from selenium.webdriver.common.by import By
 def index(request):
     return render(request, 'index.html')
 
-
 def submit(request):
     if request.method == 'POST':
 
@@ -22,9 +21,10 @@ def submit(request):
         params['name'] = name
         params['reg_num'] = reg_num
         params['content'] = check(request, name, reg_num)
-        if params['content']:
-            return render(request, 'render.html', params)
-        return HttpResponse("<h2>Doctor Invalid</h2>")
+        # if params['content']:
+            # return render(request, 'render.html', params)
+        # return HttpResponse("<h2>Doctor Invalid</h2>")
+        return HttpResponse("<h1>sampla vishay</h1>")
 
 
 def check(request, name, registration_number):
